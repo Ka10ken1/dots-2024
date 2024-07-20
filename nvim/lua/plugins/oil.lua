@@ -1,7 +1,8 @@
 return {
 	"stevearc/oil.nvim",
 	opts = function()
-		require("configs.oil")
+		local oil_opts = require("configs.oil")
+		return oil_opts
 	end,
 	config = function(_, opts)
 		require("oil").setup(opts)

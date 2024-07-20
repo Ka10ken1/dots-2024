@@ -17,6 +17,9 @@ local M = {
 		["g."] = "actions.toggle_hidden",
 		["g\\"] = "actions.toggle_trash",
 	},
+	view_options = {
+		show_hidden = true,
+	},
 }
 
 return M

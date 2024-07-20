@@ -21,6 +21,18 @@ return {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
 				},
+				defaults = {
+					vimgrep_arguments = {
+						"--hidden", -- Include hidden files
+					},
+					file_ignore_patterns = { "node_modules" },
+				},
+			},
+
+			builtin = {
+				lsp_document_symbols = {
+					symbol_width = 100,
+				},
 			},
 		})
 

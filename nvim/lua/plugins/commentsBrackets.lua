@@ -22,9 +22,7 @@ return {
 		config = function(_, opts)
 			require("Comment").setup(opts)
 		end,
-		lazy = false,
 	},
 	{ "craigemery/vim-autotag" },
 	{ "windwp/nvim-ts-autotag" },
-	{ "numToStr/Comment.nvim", opts = {} },
 }

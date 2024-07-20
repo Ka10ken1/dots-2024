@@ -29,7 +29,7 @@ return {
 
 				map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
-				map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+				-- map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 
 				map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
@@ -61,15 +61,35 @@ return {
 
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
+			-- lua
 			"stylua",
+
+			-- cpp/c
 			"clangd",
 			"clang-format",
+
+			-- python
 			"black",
-			"texlab",
-			"prettier",
 			"pyright",
+
+			-- rust
+			"rust_analyzer",
+
+			-- mysql
+			"sqls",
+
+			-- js/ts/html/css
+			"prettier",
 			"typescript-language-server",
 			"html-lsp",
+			"css-lsp",
+			"eslint_d",
+
+			-- bash
+			"bash-language-server",
+
+			-- typst
+			"typst-lsp",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

@@ -8,7 +8,7 @@ require("lazy").setup({
 	require("plugins.java"),
 
 	-- sql
-	-- require("plugins.sqlui"),
+	require("plugins.sqlui"),
 
 	-- debugger
 
@@ -32,12 +32,15 @@ require("lazy").setup({
 
 	-- live server
 
-	require("plugins.liveserver"),
+	-- require("plugins.liveserver"),
 
 	require("plugins.commentsBrackets"),
 
-	--NOTE: nvim-tree
-	require("plugins.nvimtree"),
+	-- nvim-tree
+	-- require("plugins.nvimtree"),
+
+	-- oil
+	require("plugins.oil"),
 
 	-- git signs
 	require("plugins.git"),
@@ -59,7 +62,13 @@ require("lazy").setup({
 	-- themes
 	require("plugins.themes"),
 
+	-- code runner
+	require("plugins.code_runner"),
+
 	require("plugins.treesitter"),
+
+	-- nvim-webdevicons
+	require("plugins.icons"),
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {

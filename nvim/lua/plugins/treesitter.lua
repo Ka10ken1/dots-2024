@@ -2,7 +2,19 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	opts = {
-		ensure_installed = { "bash", "cpp", "html", "lua", "javascript", "css", "python", "rust", "sql", "xml" },
+		ensure_installed = {
+			"bash",
+			"cpp",
+			"html",
+			"lua",
+			"javascript",
+			"css",
+			"python",
+			"rust",
+			"sql",
+			"xml",
+			"java",
+		},
 		auto_install = true,
 		highlight = {
 			enable = true,
