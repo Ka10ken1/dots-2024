@@ -3,72 +3,43 @@ require("keymaps")
 require("autocmd")
 
 require("lazy").setup({
+	"tpope/vim-sleuth",
 
-	-- java lsp
-	require("plugins.java"),
-
-	-- sql
-	require("plugins.sqlui"),
-
-	-- debugger
-
-	-- require("plugins.dap"),
-
-	-- rust babyy
-
-	require("plugins.rust"),
-
-	-- startup
-	-- require("plugins.startup"),
-
-	-- typst
-	require("plugins.typst"),
-
-	--terminal
-	require("plugins.terminal"),
-
-	--statusline
-	require("plugins.statusline"),
-
-	-- live server
-
-	-- require("plugins.liveserver"),
-
-	require("plugins.commentsBrackets"),
-
-	-- nvim-tree
-	-- require("plugins.nvimtree"),
-
-	-- oil
-	require("plugins.oil"),
-
-	-- git signs
-	require("plugins.git"),
-
-	-- which key
-	require("plugins.which_key"),
-
-	-- telescope
-	require("plugins.telescope"),
+	require("plugins.lazydev"),
 
 	require("plugins.lsp"),
 
-	-- formatter
-	require("plugins.formatter"),
-
-	-- cmp
 	require("plugins.cmp"),
 
-	-- themes
+	require("plugins.codium"),
+
+	require("plugins.formatter"),
+
 	require("plugins.themes"),
 
-	-- code runner
-	require("plugins.code_runner"),
+	require("plugins.java"),
 
 	require("plugins.treesitter"),
 
-	-- nvim-webdevicons
-	require("plugins.icons"),
+	require("plugins.rust"),
+
+	require("plugins.typst"),
+
+	require("plugins.terminal"),
+
+	require("plugins.mini"),
+
+	require("plugins.commentsBrackets"),
+
+	require("plugins.transparent"),
+
+	require("plugins.oil"),
+
+	require("plugins.git"),
+
+	require("plugins.which_key"),
+
+	require("plugins.telescope"),
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {
@@ -88,3 +59,13 @@ require("lazy").setup({
 		},
 	},
 })
+
+if vim.fn.empty(vim.env.TMUX) == 1 and vim.env.TERM_PROGRAM ~= "Apple_Terminal" then
+	-- Enable true color for Neovim versions 0.1.3 and 0.1.4
+	vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
+
+	-- Enable `termguicolors` for Neovim > 0.1.5
+	if vim.fn.has("termguicolors") == 1 then
+		vim.opt.termguicolors = true
+	end
+end

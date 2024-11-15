@@ -6,9 +6,16 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 		{ "j-hui/fidget.nvim", opts = {} },
-
-		{ "folke/neodev.nvim", opts = {} },
+		"hrsh7th/cmp-nvim-lsp",
 	},
+
+	init = function()
+		vim.g.coq_settings = {
+			auto_start = true, -- if you want to start COQ at startup
+			-- Your COQ settings here
+		}
+	end,
+
 	config = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
@@ -73,7 +80,7 @@ return {
 			"pyright",
 
 			-- rust
-			"rust_analyzer",
+			-- "rust_analyzer",
 
 			-- mysql
 			"sqls",
@@ -83,7 +90,6 @@ return {
 			"typescript-language-server",
 			"html-lsp",
 			"css-lsp",
-			"eslint_d",
 
 			-- bash
 			"bash-language-server",
