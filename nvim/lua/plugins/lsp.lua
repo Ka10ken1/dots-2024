@@ -3,8 +3,6 @@ return {
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			{
-				-- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
-				-- used for completion, annotations and signatures of Neovim apis
 				"folke/lazydev.nvim",
 				ft = "lua",
 				opts = {
@@ -29,10 +27,8 @@ return {
 
 			-- Schema information
 			"b0o/SchemaStore.nvim",
-			{ dir = "~/plugins/ocaml.nvim" },
 		},
 		config = function()
-			-- Don't do LSP stuff if we're in Obsidian Edit mode
 			if vim.g.obsidian then
 				return
 			end
@@ -98,7 +94,6 @@ return {
 				pyright = true,
 				mojo = { manual_install = true },
 
-				-- Enabled biome formatting, turn off all the other ones generally
 				biome = true,
 				ts_ls = {
 					root_dir = require("lspconfig").util.root_pattern("package.json"),
@@ -107,7 +102,6 @@ return {
 						documentFormattingProvider = false,
 					},
 				},
-				-- denols = true,
 				jsonls = {
 					server_capabilities = {
 						documentFormattingProvider = false,
@@ -120,11 +114,11 @@ return {
 					},
 				},
 
-				-- cssls = {
-				--   server_capabilities = {
-				--     documentFormattingProvider = false,
-				--   },
-				-- },
+				cssls = {
+					server_capabilities = {
+						documentFormattingProvider = false,
+					},
+				},
 
 				yamlls = {
 					settings = {
@@ -140,21 +134,6 @@ return {
 
 				ols = {},
 				racket_langserver = { manual_install = true },
-
-				-- ocamllsp = {
-				-- 	manual_install = true,
-				-- 	cmd = { "dune", "tools", "exec", "ocamllsp" },
-				-- 	-- cmd = { "dune", "exec", "ocamllsp" },
-				-- 	settings = {
-				-- 		codelens = { enable = true },
-				-- 		inlayHints = { enable = true },
-				-- 		syntaxDocumentation = { enable = true },
-				-- 	},
-				--
-				-- 	server_capabilities = { semanticTokensProvider = false },
-				--
-				-- 	-- TODO: Check if i still need the filtypes stuff i had before
-				-- },
 
 				gleam = {
 					manual_install = true,
@@ -211,7 +190,6 @@ return {
 			local ensure_installed = {
 				"stylua",
 				"lua_ls",
-				"delve",
 				-- "tailwind-language-server",
 			}
 
